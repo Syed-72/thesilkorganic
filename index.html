@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,12 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #f8f9fa;
+        }
+
+        /* Global Styles */
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Header Styles */
@@ -34,13 +41,6 @@
             padding: 40px 20px;
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
         }
 
         .hero h2 {
@@ -98,13 +98,15 @@
             background-color: #fff;
             padding: 40px 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 40px;
         }
 
-        .product-details .text {
-            flex: 1;
+        .product-details .text,
+        .product-details img {
+            flex: 1 1 400px;
             max-width: 600px;
         }
 
@@ -118,14 +120,6 @@
             color: #555;
             font-size: 1.1rem;
             margin-bottom: 20px;
-        }
-
-        .product-details img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            flex: 1;
-            max-width: 400px;
         }
 
         /* Save the Earth Section */
@@ -153,13 +147,15 @@
             background-color: #fff;
             padding: 40px 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 40px;
         }
 
-        .gifts .text {
-            flex: 1;
+        .gifts .text,
+        .gifts img {
+            flex: 1 1 400px;
             max-width: 600px;
         }
 
@@ -173,14 +169,6 @@
             color: #555;
             font-size: 1.1rem;
             margin-bottom: 20px;
-        }
-
-        .gifts img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            flex: 1;
-            max-width: 400px;
         }
 
         .gifts .cta-button {
@@ -274,10 +262,47 @@
             margin: 0;
             font-size: 1rem;
         }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            /* Tablet styles */
+            .product-details,
+            .gifts {
+                flex-direction: column;
+            }
+
+            .testimonials .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Mobile styles */
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero .cta-button {
+                font-size: 1rem;
+            }
+
+            .benefits h3,
+            .product-details .text h3,
+            .save-earth h3,
+            .gifts .text h3,
+            .testimonials h3,
+            .faq h3 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
-<body>
 
+<body>
     <!-- Header Section -->
     <header class="header">
         <h1>The Silk Organics</h1>
@@ -309,37 +334,35 @@
     <!-- Product Details Section - Two Columns -->
     <section class="product-details">
         <div class="text">
-            <h3>Product Details</h3>
+            <h3>Crafted with Love & Nature's Best</h3>
             <p>
-                Our premium hair oil is a unique blend of organic ingredients including Argan Oil, Coconut Oil, and Jojoba Oil. This combination 
-                is designed to revitalize your hair, offering deep moisture while preventing damage and promoting natural growth. Available in a 
-                200ml eco-friendly glass bottle.
+                At The Silk Organics, we believe in the power of nature. Our hair oil is a unique blend of essential oils and herbs, 
+                designed to restore your hair's natural vitality. Free from synthetic additives, it's a pure solution for your hair care needs.
             </p>
         </div>
-        <img src="image2.jpg" alt="The Silk Organics Hair Oil Bottle">
+        <img src="image2.jpg" alt="Natural Ingredients Hair Oil">
     </section>
 
     <!-- Save the Earth Section -->
     <section class="save-earth">
-        <h3>Our Commitment to Sustainability</h3>
+        <h3>Save the Earth, One Bottle at a Time</h3>
         <p>
-            At The Silk Organics, we are dedicated to preserving the planet. Our packaging is 100% recyclable, and our formulas are vegan 
-            and cruelty-free. With every purchase, you support our mission to reduce waste and protect the environment.
+            We are committed to sustainability. All our products are packaged in eco-friendly materials. 
+            With every purchase, you're not just investing in your hair's health, but also contributing to a greener planet.
         </p>
     </section>
 
     <!-- Gifts Section - Two Columns -->
     <section class="gifts">
-        <img src="image3.jpeg" alt="Beautifully Packaged Gift Box">
         <div class="text">
-            <h3>Give the Gift of Beautiful Hair</h3>
+            <h3>A Perfect Gift for Your Loved Ones</h3>
             <p>
-                Looking for a thoughtful and luxurious gift? Our hair oil is the perfect present for any occasion. Encased in a beautifully 
-                designed box, it’s a gift that will delight and pamper anyone who receives it. Ideal for birthdays, anniversaries, or just 
-                because!
+                Looking for a thoughtful and beneficial gift? Our premium hair oil makes for a fantastic present for any occasion. 
+                Show your loved ones you care by gifting them the secret to beautiful hair.
             </p>
-            <a href="#" class="cta-button">Shop Gifts</a>
+            <a href="#" class="cta-button">Shop Gift Sets</a>
         </div>
+        <img src="image3.jpg" alt="Perfect Gift for Loved Ones">
     </section>
 
     <!-- Testimonials Section - Two Columns -->
@@ -347,20 +370,12 @@
         <h3>What Our Customers Are Saying</h3>
         <div class="reviews">
             <div class="testimonial">
-                <p>"My hair has never felt so soft and manageable. I can't believe the difference after just a few uses!"</p>
-                <p class="author">- Maria, Birmingham</p>
+                <p>"My hair has never felt so soft and healthy! I'm in love with this product. Highly recommended!"</p>
+                <p class="author">- Sarah J.</p>
             </div>
             <div class="testimonial">
-                <p>"I've struggled with hair loss for years, and The Silk Organics has genuinely helped. My hair feels thicker and healthier."</p>
-                <p class="author">- David, Leeds</p>
-            </div>
-            <div class="testimonial">
-                <p>"I love the natural ingredients. My scalp feels soothed, and the fragrance is so refreshing!"</p>
-                <p class="author">- Aisha, Liverpool</p>
-            </div>
-            <div class="testimonial">
-                <p>"This hair oil has made a world of difference. I no longer have to worry about split ends and breakage."</p>
-                <p class="author">- Hannah, Edinburgh</p>
+                <p>"After just a few uses, I noticed a huge difference. The frizz is gone, and my hair shines beautifully."</p>
+                <p class="author">- James T.</p>
             </div>
         </div>
     </section>
@@ -369,19 +384,19 @@
     <section class="faq">
         <h3>Frequently Asked Questions</h3>
         <div class="faq-item">
-            <h4>Is the hair oil suitable for all hair types?</h4>
-            <p>Yes, The Silk Organics Hair Oil is formulated to work with all hair types, including curly, straight, and color-treated hair.</p>
+            <h4>Is the product suitable for all hair types?</h4>
+            <p>Yes, our hair oil is designed to work well with all hair types, from straight to curly and everything in between.</p>
         </div>
         <div class="faq-item">
-            <h4>How often should I use the hair oil?</h4>
-            <p>For best results, apply the hair oil 2-3 times a week. You can use it as a pre-shampoo treatment or a leave-in conditioner.</p>
+            <h4>Are there any artificial additives?</h4>
+            <p>No, we only use 100% natural and organic ingredients. There are no artificial additives or harsh chemicals.</p>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 The Silk Organics. All Rights Reserved.</p>
+        <p>&copy; 2024 The Silk Organics - All Rights Reserved.</p>
     </footer>
-
 </body>
+
 </html>
