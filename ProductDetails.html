@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Silk Organics</title>
+
+  <!-- CSS files links -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts links -->
+  <!-- Bangers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- JavaScript for Font Awesome -->
+  <script src="https://kit.fontawesome.com/b08530ee0a.js" crossorigin="anonymous"></script>
+
+  <!-- CSS for Slider and Page -->
+  <style>
+    /* Basic styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 800px;
+      margin: auto;
+    }
+
+    .slider {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      background-color: white;
+    }
+
+    .slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      display: none; /* Hide all slides initially */
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Thumbnail styling */
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 10px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 60px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s, border 0.3s;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail:hover,
+    .active-thumbnail {
+      opacity: 1;
+      border-color: #ff9900; /* Amazon-like orange */
+    }
+  </style>
+</head>
+
+<body id="page-recipe">
+  <!-- Page Header -->
+  <header>
+    <div class="container back-w">
+      <nav class="navbar navbar-expand-lg">
+        <div style="width: 12rem; padding-left: 2%;">
+          <a href="index.html"><img src="logo.png" alt="The Silk Organics" /></a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+          aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" style="margin-left:auto; margin-right: 2%">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto" style="padding-right: 2%;">
+            <li class="nav-item">
+              <a class="nav-link" href="https://syed-72.github.io/thesilkorganic/index.html">
+                <i class="fa-solid fa-clipboard"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://syed-72.github.io/thesilkorganic/Catalog.html">
+                <i class="fa-solid fa-bowl-rice"></i> Catalog
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="container back-b">
+    <h1 class="mb-4 pt-4 pb-2">Healthy, Long and Strong Hair!</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Main image slider -->
+        <div class="slider">
+          <div class="slides">
+            <!-- Image slides -->
+            <div class="slide">
+              <img src="image2.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+              <img src="image3.jpeg" alt="Image 2">
+            </div>
+            <div class="slide">
+              <img src="image2.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+              <img src="image3.jpeg" alt="Image 4">
+            </div>
+          </div>
+        </div>
+
+        <!-- Thumbnails for navigation -->
+        <div class="thumbnails">
+          <div class="thumbnail" onclick="showSlide(1)">
+            <img src="image2.jpg" alt="Thumbnail 1">
+          </div>
+          <div class="thumbnail" onclick="showSlide(2)">
+            <img src="image3.jpeg" alt="Thumbnail 2">
+          </div>
+          <div class="thumbnail" onclick="showSlide(3)">
+            <img src="image2.jpg" alt="Thumbnail 3">
+          </div>
+          <div class="thumbnail" onclick="showSlide(4)">
+            <img src="image3.jpeg" alt="Thumbnail 4">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <p>Hair Fall Issues? Want long and healthy hair? No worries, now have one solution for all hair problems.
+          This hair oil is designed to nourish, strengthen, and enhance the health and appearance of your hair.
+          Formulated with natural oils like coconut, argan, and jojoba oils and herbs like gooseberry, soapberries, and valerian, 
+          it will help moisturize the scalp, reduce frizz and hair fall, and promote shine and growth. You will see significant 
+          improvement in one month. Ideal for both men and women.
+        </p>
+
+        <ul class="recipe-features">
+          <li><i class="fas fa-star-half-alt"></i> 5 Stars</li>
+          <li><i class="fas fa-dollar-sign"></i> 2,700</li>
+        </ul>
+        <button id="addFav" type="button" class="btn btn-primary mb-3" data-recipeid="">Add to basket</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Follow Us Section -->
+  <div class="container back-b">
+    <div class="row pt-2 back-b">
+      <div class="col-md-12">
+        <h2 class="pb-1 text-center" style="border-bottom: solid 2px #66d891;"><b>Follow Us</b></h2>
+        <p class="text-center">Follow us on social media to get exclusive deals, offers, and rewards!</p>
+        <div class="text-center">
+          <a href="#"><img style="height: 40px;" src="image5.png" alt="Facebook"></a>
+          <a href="#"><img style="height: 40px; padding-left: 1%;" src="image6.png" alt="Instagram"></a>
+          <a href="#"><img style="height: 40px; padding-left: 1%;" src="image7.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Slider Functionality -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    // Show the first slide by default
+    showSlide(currentSlide);
+
+    // Function to show a specific slide
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? 'block' : 'none';
+      });
+      currentSlide = index;
+    }
+  </script>
+</body>
+
+</html>
