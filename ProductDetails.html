@@ -60,13 +60,167 @@
   
   <div class="row">
     <div class="col-md-6">
-        <div class="row">
+ <!--       <div class="row">
             <div class="col-md-4 pt-2">
               <div class="recipe-image mb-4" style="background-image: url('image2.jpg');">
                 <a href=" " data-lightbox="recipe-imgs"></></a>
               </div>
             </div>
+        </div> -->
+
+    <style>
+        /* Basic styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slider {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            display: none; /* Hide all slides initially */
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Thumbnail styling */
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 60px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s, border 0.3s;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail:hover,
+        .active-thumbnail {
+            opacity: 1;
+            border-color: #ff9900; /* Amazon-like orange */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main image slider -->
+        <div class="slider">
+            <div class="slides">
+                <!-- Image slides -->
+                <div class="slide">
+                    <img src="image2.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="image3.jpeg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="Image 3">
+                </div>
+                <div class="slide">
+                    <img src="images3.jpeg" alt="Image 4">
+                </div>
+            </div>
         </div>
+
+        <!-- Thumbnails for navigation (below slider) -->
+        <div class="thumbnails">
+            <div class="thumbnail" onclick="showSlide(1)">
+                <img src="image2.jpg" alt="Thumbnail 1">
+            </div>
+            <div class="thumbnail" onclick="showSlide(2)">
+                <img src="image3.jpeg" alt="Thumbnail 2">
+            </div>
+            <div class="thumbnail" onclick="showSlide(3)">
+                <img src="image2.jpg" alt="Thumbnail 3">
+            </div>
+            <div class="thumbnail" onclick="showSlide(4)">
+                <img src="image3.jpeg" alt="Thumbnail 4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        showSlide(currentSlide);
+
+        // Function to show the selected slide
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            if (n > slides.length) currentSlide = 1;
+            if (n < 1) currentSlide = slides.length;
+
+            // Hide all slides and reset thumbnails
+            slides.forEach((slide) => {
+                slide.style.display = 'none';
+            });
+
+            thumbnails.forEach((thumb) => {
+                thumb.classList.remove('active-thumbnail');
+            });
+
+            // Show the current slide and highlight the corresponding thumbnail
+            slides[n - 1].style.display = 'block';
+            thumbnails[n - 1].classList.add('active-thumbnail');
+
+            currentSlide = n;
+        }
+
+        // Event listener to handle thumbnail clicks
+        document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => showSlide(index + 1));
+        });
+    </script>
+      
     </div>
     
     <div class="col-md-6">
