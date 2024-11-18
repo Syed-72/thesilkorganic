@@ -160,16 +160,16 @@
 
         <!-- Thumbnails for navigation -->
         <div class="thumbnails">
-          <div class="thumbnail" onclick="showSlide(1)">
+          <div class="thumbnail" onclick="showSlide(0)">
             <img src="image2.jpg" alt="Thumbnail 1">
           </div>
-          <div class="thumbnail" onclick="showSlide(2)">
+          <div class="thumbnail" onclick="showSlide(1)">
             <img src="image3.jpeg" alt="Thumbnail 2">
           </div>
-          <div class="thumbnail" onclick="showSlide(3)">
+          <div class="thumbnail" onclick="showSlide(2)">
             <img src="image2.jpg" alt="Thumbnail 3">
           </div>
-          <div class="thumbnail" onclick="showSlide(4)">
+          <div class="thumbnail" onclick="showSlide(3)">
             <img src="image3.jpeg" alt="Thumbnail 4">
           </div>
         </div>
@@ -220,7 +220,7 @@
 
   <!-- JavaScript for Slider Functionality -->
   <script>
-    let currentSlide = 1;
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
     // Show the first slide by default
