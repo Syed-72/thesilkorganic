@@ -26,38 +26,23 @@
       
     <div class="col-md-6">
               
-      <p><?php echo $recipe_data['recipe_instructions']; ?></p>
+      <p>Hair Fall Issues? Want long and healthy hair? No worries now have one solution for all hair problems. </br> 
+      This hair oil is designed to nourish, strengthen, and enhance the health and appearance of your hair.
+      This is formulated with natural oils like coconut, argan, and jojoba oils etc; and many herbs like gooseberry, 
+      soapberries, valerian; which will help moisturize the scalp, reduce frizz and hair fall, and promote shine and growth. 
+      
+      </br>You will see significant improvement in one month. Ideal for both men and women.</p>
 
       <ul class="recipe-features">
 
-        <li>
-          
-          <?php
-            $Review = new Review($Conn);
-            $avg_rating = $Review->calculateRating($_GET['id']);
-            $avg_rating = round($avg_rating['avg_rating'], 1);
-          ?>
-        
-          <li><i class="fas fa-star-half-alt"></i> <?php echo $avg_rating; ?> Stars</li>
-        
+        <li>        
+          <li><i class="fas fa-star-half-alt"></i> 5 Stars</li>
         </li>
-
-        <li><i class="far fa-clock"></i> <?php echo $recipe_data['recipe_time']; ?></li>
-        <li><i class="fas fa-users"></i> <?php echo $recipe_data['recipe_servings']; ?> Servings</li>
-        <li><i class="fas fa-dollar-sign"></i> <?php echo $recipe_data['recipe_price']; ?></li>
-        <li><i class="fas fa-tags"></i> <?php echo $recipe_data['tags']; ?></li>
-
+        <li><i class="fas fa-dollar-sign"></i> 2,700</li>
       </ul>
-
-              <button id="removeFav" type="button" class="btn btn-primary mb-3" data-recipeid="<?php echo $_GET['id']; ?>">Remove from favourites</button>
-    
-            }else{
       
-              <button id="addFav" type="button" class="btn btn-primary mb-3" data-recipeid="<?php echo $_GET['id']; ?>">Add to favourites</button>
+              <button id="addFav" type="button" class="btn btn-primary mb-3" data-recipeid=" ">Add to basket</button>
       
-            }
-      
-
 
     </div>
 
